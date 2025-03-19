@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findNumbers(numbers) {
+        let count = 1;
+        let n = 2;
+        while (count <= numbers) {
+            let countsnt = 0;
+            for (let i = 1; i <= n/2; i++) {
+                if (n % i == 0) {
+                    countsnt++;
+                }
+            }
+            if (countsnt == 1) {
+                count++;
+                document.write(n + "<br>");
+            }
+            n++;
+        }
+    }
+    let numbers = parseInt(prompt("Enter the first n prime numbers"));
+    findNumbers(numbers);
+</script>
+</body>
+</html>
