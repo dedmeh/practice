@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" name="st1" id="n1" value="Enter first number"> <input type="number" name="st2" id="n2" value="Enter second number"><br>
+<input type="button" onclick="add()" value="Addition(+)">
+<input type="button" onclick="sub()" value="Subtraction(-)">
+<input type="button" onclick="mul()" value="Multiplication(*)">
+<input type="button" onclick="div()" value="Division(/)">
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function add() {
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        let result = +n1 + +n2;
+        document.getElementById("result").innerHTML = "Answer: " + result;
+    }
+    function sub() {
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        let result = n1 - n2;
+        document.getElementById("result").innerHTML = "Answer: " + result;
+    }
+    function mul() {
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        let result = n1 * n2;
+        document.getElementById("result").innerHTML = "Answer: " + result;
+    }
+    function div() {
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        let result = n1 / n2;
+        document.getElementById("result").innerHTML = "Answer: " + result;
+    }
+</script>
