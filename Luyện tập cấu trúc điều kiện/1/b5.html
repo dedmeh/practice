@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<scRipt>
+    let xephang
+    let dbkt = parseInt(prompt("Điểm bài kiểm tra?"))
+    let dtgk = parseInt(prompt("Điểm thi giữa kì?"))
+    let dtck = parseInt(prompt("Điểm thi cuối kì?"))
+    let dtb = (dbkt + dtgk*2 + dtck*3)/6
+    if (dtb>9 && dtb<=10) {
+        xephang = "Xuất sắc"
+    }else if (dtb > 8 && dtb<=9) {
+        xephang = "Giỏi"
+    }else if (dtb > 7 && dtb<=8) {
+        xephang = "Khá"
+    }else if (dtb > 5 && dtb<=7) {
+        xephang = "Trung bình"
+    }else if (dtb > 4 && dtb<=5) {
+        xephang = "Yếu"
+    } else (xephang = "Kém")
+    alert("Điểm trung bình: " + dtb + " ; Học lực: " + xephang)
+</scRipt>
+</body>
+</html>
