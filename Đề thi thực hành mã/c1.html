@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="mang"></p>
+<p id ="tb"></p>
+<input  type="button" value="Lấy mảng" onclick="nhapMang()">
+</body>
+</html>
+<script>
+  function nhapMang(){
+    let mang=[]
+    let slmang= parseInt(prompt("Số lượng phần tử của mảng"))
+    if (slmang > 50 || slmang <= 0) {
+      alert("Nhập số từ 1 đến 50")
+    }
+    for(let i=0;i<slmang;i++){
+      let ptu=parseInt(prompt("Nhập phần tử"))
+      mang.push(ptu)
+    }
+    document.getElementById("mang").innerHTML = mang.join(", ");
+    let tong = 0
+      let sluong = 0
+      for (let i=0; i<mang.length; i++){
+          if (mang[i] % 3 === 0) {
+              tong += mang[i];
+              sluong++;
+          }
+      }
+      if ( sluong !== 0 ) {
+          document.getElementById("tb").innerHTML = "Trung bình:" + (tong / sluong);
+      } else (document.getElementById("tb").innerHTML="Không có số chia hết cho 3")
+  }
+
+</script>

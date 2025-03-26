@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="Kiểm tra số hoàn hảo" id="input">
+<button onclick="checkPrft()">Kiểm tra</button><br>
+<p id="output"></p>
+<p id="mang"></p>
+</body>
+</html>
+<script>
+    function checkPrft() {
+        let x = document.getElementById("input").value;
+        let mang = []
+        let tong = 0
+        for (let i = 1; i <= x / 2; i++) {
+            if (x % i === 0) {
+                tong += i;
+                mang.push(i);
+            }
+        }
+        if (tong == x) {
+            document.getElementById("output").innerHTML = x + " là số hoàn hảo" ;
+        } else {
+            document.getElementById("output").innerHTML = x + " không phải số hoàn hảo";
+        }
+        document.getElementById("mang").innerHTML = "Các ước là " + mang.join(", ");
+    }
+</script>
