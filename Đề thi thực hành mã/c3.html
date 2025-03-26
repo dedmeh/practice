@@ -5,39 +5,44 @@
     <title>Title</title>
 </head>
 <body>
-<input type="text" id="month" placeholder="Điền tháng và năm">
+<input type="text" pattern="^(0[1-9]|1[0-2])\/\d{4}$" id="monthyear" placeholder="Điền tháng và năm(MM/YYYY)">
 <input type="button" onclick="dayinMonth() " value="Tìm ngày"><br>
+<p id="day"></p>
 </body>
 </html>
 <script>
-    let month = document.getElementById('month');
-    let year = document.getElementById('year');
-  if (month < 0 || month > 12 || year < 0) {
-    alert("Tháng/Năm không phù hợp")
-  }
-  let day;
+
   function dayinMonth() {
-    switch (month,year) {
-      case '1':
-      case '3':
-      case '5':
-      case '7':
-      case '8':
-      case '10':
-      case '12':
+      let monthyear = document.getElementById('monthyear').value;
+      let [month, year] = monthyear.split('/');
+      month = parseInt(month);
+      year = parseInt(year);
+      if (month < 0 || month > 12 || year < 0) {
+          alert("Tháng/Năm không phù hợp")
+      }
+      let day;
+      switch (month) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
         day =31;
         break;
-      case '4':
-      case '6':
-      case '9':
-      case '11':
+      case 4:
+      case 6:
+      case 9:
+      case 11:
         day = 30;
         break;
-      case '2':
+      case 2:
         if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)){
           day = 29
-        } else (day=28)
+        } else {day=28;}
         break;
     }
+      document.getElementById("day").innerHTML = "Tháng "+ month +" năm "+ year +" có " + day + " ngày";
   }
 </script>
